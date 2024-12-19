@@ -14,10 +14,19 @@
     <!-- Navigation -->
     <nav>
       <div class="logo">Portfolio</div>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+        <!-- Font Awesome hamburger icon -->
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li>
+          <button class="close-btn" id="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </li>
       </ul>
       <button class="theme-toggle" id="theme-toggle">
         <i class="fas fa-moon"></i>
@@ -96,7 +105,7 @@
             Interactive games, personal blogs, and Articulate Storyline
             experiments.
           </p>
-          <a href="fun-projects.html" class="btn">
+          <a href="fun-projects.html" class="btn" class="normal">
             View Projects <i class="fas fa-arrow-right"></i>
           </a>
         </div>
@@ -113,7 +122,32 @@
         <button type="submit" class="btn">Send Message</button>
       </form>
     </section>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navList = document.getElementById("nav-list");
+      const closeBtn = document.getElementById("close-btn");
 
+      // Toggle menu on hamburger click
+      menuToggle.addEventListener("click", (event) => {
+        navList.classList.toggle("show");
+        event.stopPropagation();
+      });
+
+      // Close menu when clicking the (x) button
+      closeBtn.addEventListener("click", () => {
+        navList.classList.remove("show");
+      });
+
+      // Close menu when clicking outside the menu
+      document.addEventListener("click", (event) => {
+        if (
+          !navList.contains(event.target) &&
+          !menuToggle.contains(event.target)
+        ) {
+          navList.classList.remove("show");
+        }
+      });
+    </script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -133,6 +133,7 @@
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
+
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
@@ -169,4 +170,39 @@
 .back-to-category .btn:hover {
   background: #005ecb;
   transform: scale(1.05);
+}
+.parallax-portfolio1 {
+  background-image: url("corporate-governance-header.webp") !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 100px 0 !important;
+  min-height: 400px !important;
+  position: relative !important;
+  color: whitesmoke !important;
+}
+@media (max-width: 768px) {
+  .parallax-portfolio1 {
+    background-attachment: scroll; /* Fallback for mobile */
+  }
+}
+
+.parallax-portfolio1 {
+  min-height: 400px;
+}
+
+.parallax-portfolio1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+.parallax-portfolio1 * {
+  position: relative;
+  z-index: 2;
 }

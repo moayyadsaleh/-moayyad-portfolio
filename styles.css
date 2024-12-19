@@ -20,12 +20,12 @@ h2 {
   color: whitesmoke;
 }
 
-/* Navigation */
+/* Base Navigation */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem; /* Default padding for desktop */
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -36,6 +36,69 @@ nav {
   transform: translateX(-50%);
   width: 90%;
   z-index: 1000;
+}
+
+/* Navigation List */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Hamburger Button Hidden by Default */
+.menu-toggle {
+  display: none;
+}
+
+/* Mobile View Styles */
+@media (max-width: 768px) {
+  nav {
+    padding: 0.5rem 1rem; /* Thinner padding for mobile */
+    width: 95%;
+    top: 0.5rem; /* Keep it closer to the top */
+    border-radius: 8px;
+    height: 3rem; /* Set a fixed height to keep it compact */
+  }
+
+  .logo {
+    font-size: 1rem; /* Slightly smaller logo font size */
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 100%; /* Dropdown directly below the nav bar */
+    left: 0;
+    border-radius: 0 0 8px 8px;
+    max-height: 50vh; /* Limit dropdown height to avoid covering too much */
+    overflow-y: auto; /* Add scroll if menu exceeds max height */
+    padding: 1rem;
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+
+  .nav-list li {
+    margin-bottom: 0.75rem; /* Add spacing between menu items */
+  }
+
+  /* Add margin to body to avoid content being hidden by fixed nav */
+  body {
+    margin-top: 4rem; /* Push content below the fixed nav bar */
+  }
 }
 
 nav .logo {
@@ -244,7 +307,7 @@ nav .theme-toggle {
   border-radius: 12px;
   margin: 2rem auto;
   max-width: 800px;
-  text-align: center;
+  text-align: left; /* Aligns button text to the left */
 }
 /* Sliding Overlay Effect */
 
@@ -294,7 +357,7 @@ nav .theme-toggle {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border-radius: 12px;
-  text-align: center;
+  text-align: left; /* Aligns button text to the left */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
@@ -339,6 +402,7 @@ form button {
   font-size: 1.2rem;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
+  text-align: left; /* Aligns button text to the left */
 }
 
 form button:hover {
@@ -362,7 +426,9 @@ form button:hover {
     height: 150px;
   }
 }
-
+.btn {
+  font-weight: normal !important;
+}
 @media (max-width: 480px) {
   .hero-text h1 {
     font-size: 2.5rem;
@@ -502,4 +568,21 @@ body.dark-mode .btn {
 body.dark-mode .btn:hover {
   background-color: #0077e3;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: whitesmoke;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+/* Hide the close button on larger screens */
+@media (min-width: 768px) {
+  .close-btn {
+    display: none;
+  }
 }

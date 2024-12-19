@@ -13,15 +13,20 @@
     <!-- Navigation -->
     <nav>
       <div class="logo">Portfolio</div>
-      <ul>
+      <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i> <!-- Font Awesome hamburger icon -->
+      </button>
+      <ul class="nav-list" id="nav-list">
         <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#portfolio">Portfolio</a></li>
         <li><a href="index.html#contact">Contact</a></li>
+        <li><button class="close-btn" id="close-btn"><i class="fas fa-times"></i></button></li>
       </ul>
       <button class="theme-toggle" id="theme-toggle">
         <i class="fas fa-moon"></i>
       </button>
     </nav>
+    
     <style>
       /* Page Container */
       body {
@@ -84,12 +89,12 @@
         margin-bottom: 2rem;
         text-align: left;
       }
-
       .section h2 {
-        font-size: 1.75rem;
-        margin-bottom: 1rem;
-        color: #000;
-      }
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #000;
+  text-align: left; /* Aligns h2 to the left */
+}
 
       .section p {
         font-size: 1rem;
@@ -163,6 +168,30 @@
       
     </section>
     </div>
-    
   </body>
+  <script>
+const menuToggle = document.getElementById('menu-toggle');
+const navList = document.getElementById('nav-list');
+const closeBtn = document.getElementById('close-btn');
+
+// Toggle menu on hamburger click
+menuToggle.addEventListener('click', (event) => {
+  navList.classList.toggle('show');
+  event.stopPropagation();
+});
+
+// Close menu when clicking the (x) button
+closeBtn.addEventListener('click', () => {
+  navList.classList.remove('show');
+});
+
+// Close menu when clicking outside the menu
+document.addEventListener('click', (event) => {
+  if (!navList.contains(event.target) && !menuToggle.contains(event.target)) {
+    navList.classList.remove('show');
+  }
+});
+
+  </script>
+  
 </html>

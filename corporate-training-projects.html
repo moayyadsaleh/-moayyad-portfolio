@@ -15,10 +15,19 @@
     <!-- Navigation -->
     <nav>
       <div class="logo">Portfolio</div>
-      <ul>
+      <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+        <!-- Font Awesome hamburger icon -->
+      </button>
+      <ul class="nav-list" id="nav-list">
         <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#portfolio">Portfolio</a></li>
         <li><a href="index.html#contact">Contact</a></li>
+        <li>
+          <button class="close-btn" id="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </li>
       </ul>
       <button class="theme-toggle" id="theme-toggle">
         <i class="fas fa-moon"></i>
@@ -26,7 +35,7 @@
     </nav>
 
     <!-- Portfolio Section -->
-    <section id="corporate-training-projects" class="parallax-portfolio">
+    <section id="corporate-training-projects" class="parallax-portfolio1">
       <h2>Corporate Training Projects</h2>
       <div class="portfolio-gallery">
         <div class="project">
@@ -60,6 +69,7 @@
           </a>
         </div>
       </div>
+
       <!-- Back to Portfolio Button -->
       <div class="back-to-portfolio">
         <a href="index.html#portfolio" class="btn">
@@ -67,7 +77,39 @@
         </a>
       </div>
     </section>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navList = document.getElementById("nav-list");
+      const closeBtn = document.getElementById("close-btn");
 
+      // Toggle menu on hamburger click
+      menuToggle.addEventListener("click", (event) => {
+        navList.classList.toggle("show");
+        event.stopPropagation();
+      });
+
+      // Close menu when clicking the (x) button
+      closeBtn.addEventListener("click", () => {
+        navList.classList.remove("show");
+      });
+
+      // Close menu when clicking outside the menu
+      document.addEventListener("click", (event) => {
+        if (
+          !navList.contains(event.target) &&
+          !menuToggle.contains(event.target)
+        ) {
+          navList.classList.remove("show");
+        }
+      });
+
+      // Ensure the menu is hidden on window resize for larger screens
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          navList.classList.remove("show");
+        }
+      });
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
