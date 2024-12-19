@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instructional Designer Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="logo">Moayyad</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+
+    <!-- Home Section with Parallax Effect -->
+    <section id="home" class="section home parallax">
+      <div class="hero-content">
+        <div class="hero-overlay"></div>
+        <!-- New overlay for the blur effect -->
+        <div class="hero-image">
+          <img src="Moayyad's Pic.png" alt="Moayyad's Picture" />
+        </div>
+        <div class="hero-text">
+          <h1>Hi, I'm <span>Moayyad</span></h1>
+          <p>Instructional Designer & E-Learning Developer</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>
+        I design intuitive, engaging, and modern learning experiences that merge
+        design, technology, and pedagogy.
+      </p>
+      <div class="about-item">
+        <i class="fas fa-lightbulb"></i>
+        <div>
+          <strong>Creative Thinker:</strong> I craft innovative solutions to
+          complex learning challenges.
+        </div>
+      </div>
+      <div class="about-item">
+        <i class="fas fa-laptop-code"></i>
+        <div>
+          <strong>Tech-Savvy:</strong> Proficient in the latest e-learning tools
+          and platforms.
+        </div>
+      </div>
+      <div class="about-item">
+        <i class="fas fa-user-graduate"></i>
+        <div>
+          <strong>Learner-Centered:</strong> Focused on creating experiences
+          that empower learners.
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section with Parallax Effect -->
+    <section id="portfolio" class="section parallax-portfolio">
+      <h2>Portfolio</h2>
+      <div class="portfolio-gallery">
+        <div class="project">
+          <h3>Interactive Learning Module</h3>
+          <p>Engaging and interactive e-learning experience.</p>
+        </div>
+        <div class="project">
+          <h3>Onboarding Curriculum</h3>
+          <p>Comprehensive onboarding curriculum design.</p>
+        </div>
+        <div class="project">
+          <h3>Microlearning Series</h3>
+          <p>Short, focused learning bursts for quick skill acquisition.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
