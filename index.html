@@ -115,13 +115,20 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
       <h2>Contact</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
+      <form
+        id="contactForm"
+        action="https://formspree.io/f/xgvegkqk"
+        method="POST"
+      >
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
         <button type="submit" class="btn">Send Message</button>
+        <p id="formStatus" style="margin-top: 10px"></p>
+        <!-- Moved inside the form -->
       </form>
     </section>
+
     <script>
       const menuToggle = document.getElementById("menu-toggle");
       const navList = document.getElementById("nav-list");
@@ -147,6 +154,45 @@
           navList.classList.remove("show");
         }
       });
+    </script>
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const form = e.target;
+          const formStatus = document.getElementById("formStatus");
+
+          try {
+            const response = await fetch(form.action, {
+              method: form.method,
+              body: new FormData(form),
+              headers: {
+                Accept: "application/json",
+              },
+            });
+
+            if (response.ok) {
+              formStatus.textContent = "Message sent successfully!";
+              formStatus.className = "success";
+              form.reset();
+            } else {
+              formStatus.textContent =
+                "Oops! Something went wrong. Please try again.";
+              formStatus.className = "error";
+            }
+          } catch (error) {
+            formStatus.textContent =
+              "Oops! Something went wrong. Please try again.";
+            formStatus.className = "error";
+          }
+
+          setTimeout(() => {
+            formStatus.textContent = "";
+            formStatus.className = "";
+          }, 3000);
+        });
     </script>
     <script src="script.js"></script>
   </body>
