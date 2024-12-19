@@ -23,3 +23,19 @@ document.addEventListener("scroll", () => {
     section.style.backgroundPositionY = `calc(50% + ${yOffset}px)`;
   });
 });
+document.querySelectorAll(".show-more-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    const moreText = button.previousElementSibling;
+    moreText.classList.toggle("hidden");
+    button.textContent = moreText.classList.contains("hidden")
+      ? "Show More"
+      : "Show Less";
+  });
+});
+document.addEventListener("scroll", () => {
+  const parallaxLayers = document.querySelectorAll(".parallax-layer");
+  parallaxLayers.forEach((layer) => {
+    let scrollOffset = window.scrollY;
+    layer.style.transform = `translateY(${scrollOffset * 0.1}px)`;
+  });
+});

@@ -57,7 +57,7 @@ nav ul {
   padding: 100px 0 !important;
   min-height: 400px !important;
   position: relative !important;
-  color: white !important; /* For better visibility of text */
+  color: whitesmoke !important;
 }
 @media (max-width: 768px) {
   .parallax-portfolio {
@@ -424,4 +424,82 @@ form button:hover {
   .menu-toggle {
     display: block;
   }
+}
+.project-info {
+  flex: 1 1 45%;
+  max-width: 45%;
+  text-align: left;
+}
+
+.project-info h3 {
+  margin-top: 1.5rem;
+}
+
+.project-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.project-info ul li {
+  background: #f0f0f0;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+}
+
+.live-demo-btn {
+  margin-top: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-image,
+  .project-info {
+    max-width: 100%;
+  }
+}
+/* Apple-Inspired Button */
+.btn {
+  display: inline-block;
+  background-color: #0071e3; /* Apple's signature blue */
+  color: #fff;
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: none;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #005bb5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  background-color: #004999;
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Button */
+body.dark-mode .btn {
+  background-color: #0a84ff;
+  color: #fff;
+}
+
+body.dark-mode .btn:hover {
+  background-color: #0077e3;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
