@@ -3,195 +3,324 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Title</title>
+    <title>Project Showcase</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- Link to your main stylesheet -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #0e0e0e;
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      header {
+        height: 100vh;
+        background-image: url("https://img.freepik.com/free-photo/global-business-internet-network-connection-iot-internet-things-business-intelligence-concept-busines-global-network-futuristic-technology-background-ai-generative_1258-176806.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 4rem;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem 2rem;
+        border-radius: 20px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      section {
+        padding: 5rem 2rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      .project-card {
+        max-width: 600px;
+        backdrop-filter: blur(15px);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        text-align: left;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+      }
+
+      .project-card h2 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+      }
+
+      .project-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #ccc;
+      }
+
+      .details-section {
+        padding: 4rem 2rem;
+        display: grid;
+        gap: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .detail-card {
+        backdrop-filter: blur(15px);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        padding: 1.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .detail-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+      }
+
+      .detail-card h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+        color: #fff;
+      }
+
+      .detail-card p {
+        color: #ccc;
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+
+      .buttons {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .buttons a {
+        text-decoration: none;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.75rem 1.5rem;
+        border-radius: 10px;
+        transition: background 0.3s, transform 0.3s;
+      }
+
+      .buttons a:hover {
+        background: rgba(255, 255, 255, 0.4);
+        transform: translateY(-5px);
+      }
+
+      footer {
+        padding: 2rem;
+        text-align: center;
+        background: #1a1a1a;
+      }
+      /* Media query for further optimization on smaller phones */
+      @media (max-width: 480px) {
+        header h1 {
+          font-size: 1.75rem;
+          padding: 0.5rem 1rem;
+        }
+
+        .project-card h2 {
+          font-size: 1.25rem;
+        }
+
+        .detail-card h3 {
+          font-size: 1.1rem;
+        }
+
+        .buttons a {
+          padding: 0.5rem 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <!-- Navigation -->
     <nav>
       <div class="logo">Portfolio</div>
       <button class="menu-toggle" id="menu-toggle">
-        <i class="fas fa-bars"></i> <!-- Font Awesome hamburger icon -->
+        <i class="fas fa-bars"></i>
+        <!-- Font Awesome hamburger icon -->
       </button>
       <ul class="nav-list" id="nav-list">
         <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#portfolio">Portfolio</a></li>
         <li><a href="index.html#contact">Contact</a></li>
-        <li><button class="close-btn" id="close-btn"><i class="fas fa-times"></i></button></li>
+        <li>
+          <button class="close-btn" id="close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </li>
       </ul>
       <button class="theme-toggle" id="theme-toggle">
         <i class="fas fa-moon"></i>
       </button>
     </nav>
-    
-    <style>
-      /* Page Container */
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f5f5f7;
-        color: #333;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-      }
 
-      .container {
-        max-width: 900px;
-        margin: 4rem auto;
-        padding: 2rem;
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(15px);
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        text-align: center;
-      }
+    <header>
+      <h1>My Sleek Project</h1>
+    </header>
 
-      /* Project Title */
-      h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: #000;
-      }
-
-      /* Project Image */
-      .project-image {
-        width: 100%;
-        height: auto;
-        border-radius: 12px;
-        margin-bottom: 2rem;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      }
-
-      /* Live Demo Button */
-      .live-demo {
-        display: inline-block;
-        background-color: #007aff;
-        color: #fff;
-        padding: 0.75rem 1.5rem;
-        border-radius: 8px;
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: 500;
-        margin-bottom: 2rem;
-        transition: background 0.3s ease, transform 0.3s ease;
-      }
-
-      .live-demo:hover {
-        background-color: #005ecb;
-        transform: scale(1.05);
-      }
-
-      /* Section Styling */
-      .section {
-        margin-bottom: 2rem;
-        text-align: left;
-      }
-      .section h2 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-  color: #000;
-  text-align: left; /* Aligns h2 to the left */
-}
-
-      .section p {
-        font-size: 1rem;
-        color: #333;
-      }
-
-      /* Footer */
-      .footer {
-        margin-top: 2rem;
-        font-size: 0.9rem;
-        color: #777;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Project Title</h1>
-      <img
-        src="futuristic-city-skyline-with-blue-network-connections-smart-city-concept-futuristic-communication-ai-generated-photo.jpg"
-        alt="Project Screenshot"
-        class="project-image"
-      />
-
-      <a href="https://example.com/live-demo" target="_blank" class="live-demo">
-        <i class="fas fa-external-link-alt"></i> View Live Demo
-      </a>
-
-      <!-- Tools Overview -->
-      <div class="section">
-        <h2><i class="fas fa-cogs"></i> Tools Overview</h2>
+    <section>
+      <div class="project-card">
+        <h2>Project Title</h2>
         <p>
-          A brief overview of the tools and technologies used in this project.
+          This project showcases cutting-edge design and functionality. Using
+          the latest technologies, it aims to deliver a seamless user experience
+          while maintaining a modern and minimalistic aesthetic.
         </p>
       </div>
-
-      <!-- Tools Used -->
-      <div class="section">
-        <h2><i class="fas fa-tools"></i> Tools Used</h2>
-        <p>HTML, CSS, JavaScript, React, Adobe XD, Figma</p>
-      </div>
-
-      <!-- Responsibilities -->
-      <div class="section">
-        <h2><i class="fas fa-tasks"></i> Responsibilities</h2>
-        <p>Design, development, deployment, and testing of the project.</p>
-      </div>
-
-      <!-- Full Development -->
-      <div class="section">
-        <h2><i class="fas fa-code"></i> Full Development</h2>
-        <p>
-          This section covers the complete development process, from initial
-          design to final deployment.
-        </p>
-      </div>
-
-      <!-- Takeaways -->
-      <div class="section">
-        <h2><i class="fas fa-lightbulb"></i> Key Takeaways</h2>
-        <p>
-          Lessons learned, challenges faced, and outcomes achieved during the
-          project.
-        </p>
-      </div>
-<!-- Back to Category Button -->
-<div class="back-to-category">
-  <a href="corporate-training-projects.html" class="btn">
-    <i class="fas fa-arrow-left"></i> Back to Corporate Training Projects
-  </a>
-</div>
-      
     </section>
+
+    <section class="details-section">
+      <div class="detail-card">
+        <h3>Tools Used</h3>
+        <p>HTML, CSS, JavaScript, Figma, React</p>
+      </div>
+
+      <div class="detail-card">
+        <h3>Audience</h3>
+        <p>
+          Developers, designers, and tech enthusiasts looking for innovative UI
+          solutions.
+        </p>
+      </div>
+
+      <div class="detail-card">
+        <h3>Responsibilities</h3>
+        <p>
+          End-to-end development, UI/UX design, responsive design
+          implementation, and performance optimization.
+        </p>
+      </div>
+
+      <div class="detail-card">
+        <h3>Full Development</h3>
+        <p>
+          Developed using modern web technologies, focusing on modular
+          components and scalability.
+        </p>
+      </div>
+
+      <div class="detail-card">
+        <h3>Takeaways</h3>
+        <p>
+          Learned the importance of balancing aesthetics with functionality and
+          deepened understanding of design principles.
+        </p>
+      </div>
+
+      <div class="buttons">
+        <a href="demo-link.html" target="_blank">View Demo</a>
+        <a href="portfolio.html">Back to Portfolio</a>
+      </div>
+    </section>
+
+    <div class="parallax-section">
+      <h2>Experience the Future</h2>
     </div>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navList = document.getElementById("nav-list");
+      const closeBtn = document.getElementById("close-btn");
+
+      // Toggle menu on hamburger click
+      menuToggle.addEventListener("click", (event) => {
+        navList.classList.toggle("show");
+        event.stopPropagation();
+      });
+
+      // Close menu when clicking the (x) button
+      closeBtn.addEventListener("click", () => {
+        navList.classList.remove("show");
+      });
+
+      // Close menu when clicking outside the menu
+      document.addEventListener("click", (event) => {
+        if (
+          !navList.contains(event.target) &&
+          !menuToggle.contains(event.target)
+        ) {
+          navList.classList.remove("show");
+        }
+      });
+
+      // Ensure the menu is hidden on window resize for larger screens
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          navList.classList.remove("show");
+        }
+      });
+    </script>
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const form = e.target;
+          const formStatus = document.getElementById("formStatus");
+
+          try {
+            const response = await fetch(form.action, {
+              method: form.method,
+              body: new FormData(form),
+              headers: {
+                Accept: "application/json",
+              },
+            });
+
+            if (response.ok) {
+              formStatus.textContent = "Message sent successfully!";
+              formStatus.className = "success";
+              form.reset();
+            } else {
+              formStatus.textContent =
+                "Oops! Something went wrong. Please try again.";
+              formStatus.className = "error";
+            }
+          } catch (error) {
+            formStatus.textContent =
+              "Oops! Something went wrong. Please try again.";
+            formStatus.className = "error";
+          }
+
+          setTimeout(() => {
+            formStatus.textContent = "";
+            formStatus.className = "";
+          }, 3000);
+        });
+    </script>
+    <footer>
+      <p>&copy; 2024 My Project Showcase. All rights reserved.</p>
+    </footer>
   </body>
-  <script>
-const menuToggle = document.getElementById('menu-toggle');
-const navList = document.getElementById('nav-list');
-const closeBtn = document.getElementById('close-btn');
-
-// Toggle menu on hamburger click
-menuToggle.addEventListener('click', (event) => {
-  navList.classList.toggle('show');
-  event.stopPropagation();
-});
-
-// Close menu when clicking the (x) button
-closeBtn.addEventListener('click', () => {
-  navList.classList.remove('show');
-});
-
-// Close menu when clicking outside the menu
-document.addEventListener('click', (event) => {
-  if (!navList.contains(event.target) && !menuToggle.contains(event.target)) {
-    navList.classList.remove('show');
-  }
-});
-
-  </script>
-  
 </html>
