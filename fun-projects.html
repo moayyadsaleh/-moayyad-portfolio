@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Instructional Designer Portfolio</title>
+    <title>Tech Solutions Portfolio</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -114,144 +114,53 @@
         font-size: 0.9rem;
         color: #ccc;
       }
-
-      /* Responsive Design */
-      @media (min-width: 768px) {
-        .nav-list {
-          display: flex;
-          flex-direction: row;
-          position: static;
-          background: none;
-          width: auto;
-          padding: 0;
-          border-radius: 0;
-        }
-
-        .nav-list li {
-          margin: 0 1rem;
-        }
-
-        .menu-toggle,
-        .close-btn {
-          display: none;
-        }
-
-        .hero h1 {
-          font-size: 3rem;
-        }
-
-        .hero p {
-          font-size: 1.2rem;
-        }
-
-        .live-demo {
-          font-size: 1.2rem;
-          padding: 0.8rem 1.5rem;
-        }
-
-        .project-visual {
-          height: 300px;
-          font-size: 1.5rem;
-        }
-
-        section h2 {
-          font-size: 2rem;
-        }
-      }
     </style>
   </head>
   <body>
-    <!-- Navigation -->
-    <nav>
-      <div class="logo">Portfolio</div>
-      <button class="menu-toggle" id="menu-toggle">
-        <i class="fas fa-bars"></i>
-      </button>
-      <ul class="nav-list" id="nav-list">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#portfolio">Portfolio</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-        <li>
-          <button class="close-btn" id="close-btn">
-            <i class="fas fa-times"></i>
-          </button>
-        </li>
-      </ul>
-      <button class="theme-toggle" id="theme-toggle">
-        <i class="fas fa-moon"></i>
-      </button>
-    </nav>
-  
     <!-- Hero Section -->
     <header class="hero parallax-hero">
-      <h1>Corporate Training Projects</h1>
-      <p>Engage. Empower. Elevate.</p>
+      <h1>Apps. Scripts. Tools.</h1>
+      <p>Innovative solutions for modern challenges.</p>
     </header>
-  
+
     <!-- Portfolio Section -->
-    <section id="corporate-training-projects" class="parallax-section">
+    <section class="parallax-section">
       <div class="portfolio-gallery">
         <div class="project">
-          <h3>Leadership Excellence</h3>
-          <p>Inspire managers. Foster growth. Drive results.</p>
-          <a href="project1.html" class="btn">
-            View Details <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-  
-        <div class="project">
-          <h3>Technical Mastery</h3>
-          <p>Cloud skills. IT precision. Future-ready teams.</p>
+          <h3>Language Learning App</h3>
+          <p>Read. Listen. Learn.</p>
           <a href="project2.html" class="btn">
-            View Details <i class="fas fa-arrow-right"></i>
+            View Project <i class="fas fa-arrow-right"></i>
           </a>
         </div>
-  
+
         <div class="project">
-          <h3>Inclusive Culture</h3>
-          <p>Embrace diversity. Promote respect. Strengthen unity.</p>
+          <h3>Task Automation Script</h3>
+          <p>Automate. Simplify. Save Time.</p>
+          <a href="automate-the-boring-tasks.html" class="btn">
+            View Project <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="project">
+          <h3>Data Analysis Tool</h3>
+          <p>Analyze. Visualize. Decide.</p>
           <a href="project3.html" class="btn">
-            View Details <i class="fas fa-arrow-right"></i>
+            View Project <i class="fas fa-arrow-right"></i>
           </a>
         </div>
       </div>
-  
+
       <!-- Back to Portfolio Button -->
       <div class="back-to-portfolio">
-        <a href="index.html#portfolio" class="btn">
+        <a href="index.html" class="btn">
           <i class="fas fa-arrow-left"></i> Back to Portfolio
         </a>
       </div>
     </section>
-  </body>
-  
 
-    <script>
-      const menuToggle = document.getElementById("menu-toggle");
-      const navList = document.getElementById("nav-list");
-      const closeBtn = document.getElementById("close-btn");
-
-      // Toggle menu on hamburger click
-      menuToggle.addEventListener("click", (event) => {
-        navList.classList.toggle("show");
-        event.stopPropagation();
-      });
-
-      // Close menu when clicking the (x) button
-      closeBtn.addEventListener("click", () => {
-        navList.classList.remove("show");
-      });
-
-      // Close menu when clicking outside the menu
-      document.addEventListener("click", (event) => {
-        if (
-          !navList.contains(event.target) &&
-          !menuToggle.contains(event.target)
-        ) {
-          navList.classList.remove("show");
-        }
-      });
-    </script>
-    <script src="script.js"></script>
+    <footer>
+      <p>&copy; 2024 Tech Solutions. All rights reserved.</p>
+    </footer>
   </body>
 </html>
